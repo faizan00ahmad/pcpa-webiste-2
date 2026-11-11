@@ -6,6 +6,7 @@ import { Motion } from "@/components/Motion";
 import { SearchDialog } from "@/components/SearchDialog";
 import "./globals.css";
 import "./motion.css";
+import "./gallery.css";
 
 // Fonts are bundled in src/fonts, so no network is needed in dev or build.
 const inter = localFont({ src: "../fonts/inter-latin.woff2", variable: "--font-inter", display: "swap", weight: "100 900" });

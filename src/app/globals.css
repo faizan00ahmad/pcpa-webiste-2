@@ -1500,7 +1500,7 @@ main:focus {
 
 .pc-hero { position: relative; padding: 0; min-height: min(72vh, 640px); display: flex; align-items: center; border: 0; background: var(--green-dark); overflow: hidden; }
 .pc-hero-bg { object-fit: cover; object-position: center 35%; }
-.pc-hero-shade { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(8, 44, 24, 0.92) 18%, rgba(8, 44, 24, 0.55) 60%, rgba(8, 44, 24, 0.25)); }
+.pc-hero-shade { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(8, 44, 24, 0.9) 16%, rgba(8, 44, 24, 0.5) 52%, rgba(8, 44, 24, 0.1)); }
 .pc-hero-copy { position: relative; padding-block: 90px 130px; color: #fff; }
 .pc-hero-copy h1 { color: #fff; max-width: 18ch; font-size: clamp(2.2rem, 5vw, 3.8rem); }
 .pc-hero-copy p { color: rgba(255, 255, 255, 0.9); max-width: 56ch; font-size: 1.1rem; }
@@ -1572,7 +1572,7 @@ main:focus {
 
 .pc-hero { position: relative; padding: 0; min-height: min(72vh, 640px); display: flex; align-items: center; border: 0; background: var(--green-dark); overflow: hidden; }
 .pc-hero-bg { object-fit: cover; object-position: center 35%; }
-.pc-hero-shade { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(8, 44, 24, 0.92) 18%, rgba(8, 44, 24, 0.55) 60%, rgba(8, 44, 24, 0.25)); }
+.pc-hero-shade { position: absolute; inset: 0; background: linear-gradient(95deg, rgba(8, 44, 24, 0.9) 16%, rgba(8, 44, 24, 0.5) 52%, rgba(8, 44, 24, 0.1)); }
 .pc-hero-copy { position: relative; padding-block: 90px 130px; color: #fff; }
 .pc-hero-copy h1 { color: #fff; max-width: 18ch; font-size: clamp(2.2rem, 5vw, 3.8rem); }
 .pc-hero-copy p { color: rgba(255, 255, 255, 0.9); max-width: 56ch; font-size: 1.1rem; }

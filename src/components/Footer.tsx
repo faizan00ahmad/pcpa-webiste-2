@@ -25,6 +25,9 @@ export function Footer() {
                 </li>
               ))}
             <li>
+              <Link href="/gallery">Photo gallery</Link>
+            </li>
+            <li>
               <Link href="/complaints">Complaints &amp; Suggestions</Link>
             </li>
             <li>

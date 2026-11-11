@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/Icon";
+import { GalleryStrip } from "@/components/GalleryStrip";
 import { IntroVideo } from "@/components/IntroVideo";
+import { PhotoCycle } from "@/components/PhotoCycle";
 import { PersonCard } from "@/components/blocks";
 import { documents } from "@/content/documents";
 import { keyDates } from "@/content/events";
@@ -31,7 +33,15 @@ export default function Home() {
     <>
       <IntroVideo />
       <section className="pc-hero" aria-label="Welcome">
-        <Image src="/images/slider/slide-09.jpg" alt="" fill priority sizes="100vw" className="pc-hero-bg" />
+        <div className="pc-hero-bg">
+          <PhotoCycle
+            slides={[
+              { src: "/images/farm/tractor-tilling-field.jpg", pos: "50% 25%" },
+              { src: "/images/slider/slide-07.jpg", pos: "50% 30%" },
+              { src: "/images/slider/slide-09.jpg", pos: "50% 35%" },
+            ]}
+          />
+        </div>
         <div className="pc-hero-shade" />
         <div className="pc-wrap pc-hero-copy">
           <p className="pc-eyebrow">Pakistan Crop Protection Association</p>
@@ -117,6 +127,18 @@ export default function Home() {
       </section>
 
       <section className="pc-section">
+        <div className="pc-wrap">
+          <div className="pc-section-head">
+            <h2 className="pc-h2">Photo Gallery</h2>
+            <Link href="/gallery" className="pc-link">
+              View all photos <Icon name="arrow" size={14} />
+            </Link>
+          </div>
+          <GalleryStrip />
+        </div>
+      </section>
+
+      <section className="pc-section pc-section-alt">
         <div className="pc-wrap pc-two">
           <div>
             <h2 className="pc-h2">Quick Links</h2>
@@ -149,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pc-section pc-section-alt">
+      <section className="pc-section">
         <div className="pc-wrap">
           <div className="pc-section-head">
             <h2 className="pc-h2">Latest News</h2>
