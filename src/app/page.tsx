@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/Icon";
 import { GalleryStrip } from "@/components/GalleryStrip";
-import { IntroVideo } from "@/components/IntroVideo";
 import { PhotoCycle } from "@/components/PhotoCycle";
 import { PersonCard } from "@/components/blocks";
 import { documents } from "@/content/documents";
@@ -31,7 +30,6 @@ export default function Home() {
   const latest = documents.filter((d) => d.status === "Current").slice(0, 6);
   return (
     <>
-      <IntroVideo />
       <section className="pc-hero" aria-label="Welcome">
         <div className="pc-hero-bg">
           <PhotoCycle
