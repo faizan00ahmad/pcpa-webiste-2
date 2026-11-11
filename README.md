@@ -2,9 +2,7 @@
 
 Pakistan Crop Protection Association website (Next.js 15, React 19, TypeScript, plain CSS). Built from Mockup 1: full-width photo hero with floating action cards, photo page banners with a left sidebar, and photo cards for the Cabinet.
 
-Subtle motion throughout (scroll reveals, count-up figures, hover lifts, hero entrance; all switched off for visitors who prefer reduced motion). An opening logo film plays once per browser session on the home page (Skip button / Esc to skip; skipped for reduced-motion visitors).
-
-## Run
+Subtle motion throughout (scroll reveals, count-up figures, hover lifts, hero entrance; all switched off for visitors who prefer reduced motion). ## Run
 
 ```bash
 npm install

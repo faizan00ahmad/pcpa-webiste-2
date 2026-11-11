@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { IntroVideo } from "@/components/IntroVideo";
 import { Motion } from "@/components/Motion";
 import { SearchDialog } from "@/components/SearchDialog";
 import "./globals.css";
@@ -29,7 +28,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: initScript }} />
       </head>
       <body>
-        <IntroVideo />
         <Header />
         <main id="main" tabIndex={-1}>
           {children}
