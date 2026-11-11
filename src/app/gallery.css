@@ -61,4 +61,25 @@
 
 /* ----- Website 2: hero slideshow and CTA photo ----- */
 .pc-hero-bg { position: absolute; top: -100px; left: 0; right: 0; bottom: 0; }
-.pc-cta { background: linear-gradient(rgba(10, 63, 35, 0.9), rgba(10, 63, 35, 0.84)), url("/images/farm/sunset-over-fields.jpg") center 60% / cover; }
+.pc-cta { background: linear-gradient(rgba(10, 63, 35, 0.9), rgba(10, 63, 35, 0.84)), url("/images/farm/tractor-spraying-at-sunset.jpg") center 60% / cover; }
+
+/* ===== Page photos: banners and in-page figures (shared) ===== */
+.pc-split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.pc-split-center { align-items: center; }
+.pc-figure { margin: 0; }
+.pc-figure-img { position: relative; aspect-ratio: 4 / 5; border-radius: var(--fig-r, 16px); overflow: hidden; box-shadow: 0 16px 36px rgba(8, 44, 24, 0.16); background: var(--green-soft, #e8f3ec); }
+.pc-figure-img img { object-fit: cover; transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.pc-figure:hover .pc-figure-img img { transform: scale(1.04); }
+.pc-figure figcaption { margin-top: 8px; font-size: 0.85rem; color: var(--muted); }
+.pc-photostrip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 6px 0 4px; }
+.pc-ps-item { position: relative; margin: 0; aspect-ratio: 4 / 3; border-radius: var(--fig-r-sm, 14px); overflow: hidden; background: var(--green-soft, #e8f3ec); }
+.pc-ps-item img { object-fit: cover; transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.pc-ps-item:hover img { transform: scale(1.06); }
+@media (max-width: 800px) { .pc-split { grid-template-columns: minmax(0, 1fr); } .pc-figure-img { aspect-ratio: 16 / 10; } }
+@media (max-width: 600px) { .pc-photostrip { grid-template-columns: minmax(0, 1fr); } .pc-ps-item { aspect-ratio: 16 / 9; } }
+
+/* ----- Website 2: photo banner ----- */
+.pc-banner { position: relative; overflow: hidden; background-color: var(--green-dark); }
+.pc-banner-img { object-fit: cover; }
+.pc-banner-shade { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(10, 63, 35, 0.93) 22%, rgba(10, 63, 35, 0.6) 70%, rgba(10, 63, 35, 0.35)); }
+.pc-banner > .pc-wrap { position: relative; z-index: 1; }

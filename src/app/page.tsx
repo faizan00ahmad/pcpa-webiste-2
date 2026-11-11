@@ -34,9 +34,10 @@ export default function Home() {
         <div className="pc-hero-bg">
           <PhotoCycle
             slides={[
-              { src: "/images/farm/tractor-wheat-field.jpg", pos: "50% 46%", shift: "16%" },
-              { src: "/images/farm/tractor-in-mustard-field.jpg", pos: "50% 46%", shift: "16%" },
-              { src: "/images/farm/tractor-tilling-field.jpg", pos: "50% 25%" },
+              { src: "/images/farm/tractor-spraying-at-sunset.jpg", pos: "50% 52%" },
+              { src: "/images/farm/combine-harvesting-wheat.jpg", pos: "50% 56%" },
+              { src: "/images/farm/farmers-inspecting-crops.jpg", pos: "30% 55%" },
+              { src: "/images/farm/aerial-tractor-green-field.jpg", pos: "50% 40%" },
             ]}
           />
         </div>
