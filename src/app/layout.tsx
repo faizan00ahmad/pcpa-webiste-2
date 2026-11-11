@@ -2,8 +2,10 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Motion } from "@/components/Motion";
 import { SearchDialog } from "@/components/SearchDialog";
 import "./globals.css";
+import "./motion.css";
 
 // Fonts are bundled in src/fonts, so no network is needed in dev or build.
 const inter = localFont({ src: "../fonts/inter-latin.woff2", variable: "--font-inter", display: "swap", weight: "100 900" });
@@ -15,9 +17,15 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = { themeColor: "#0b5d3b", width: "device-width", initialScale: 1 };
 
+/** Marks JavaScript as available before first paint so scroll-reveal styles never hide content for no-JS visitors. */
+const initScript = "document.documentElement.classList.add('js')";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${tight.variable}`}>
+    <html lang="en" className={`${inter.variable} ${tight.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: initScript }} />
+      </head>
       <body>
         <Header />
         <main id="main" tabIndex={-1}>
@@ -25,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <SearchDialog />
+        <Motion />
       </body>
     </html>
   );

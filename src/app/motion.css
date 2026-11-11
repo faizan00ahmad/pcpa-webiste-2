@@ -1,0 +1,79 @@
+/* ===== Motion layer (Website 2) =====
+   Subtle, professional movement. Everything is disabled for visitors who prefer reduced motion. */
+@keyframes pc-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pc-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes pc-pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(22, 101, 52, 0.28); } 100% { box-shadow: 0 0 0 14px rgba(22, 101, 52, 0); } }
+
+/* page fade on every navigation (opacity only, so sticky/fixed children are unaffected) */
+.pc-page { animation: pc-fade 0.45s ease both; }
+
+/* scroll reveal (classes are added by <Motion/>) */
+.js .pc-rv { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: calc(var(--rv-i, 0) * 70ms); }
+.js .pc-rv.in { opacity: 1; transform: none; }
+
+/* scroll progress line and header shadow */
+body::after { content: ""; position: fixed; left: 0; top: 0; height: 3px; width: 100%; z-index: 200; background: linear-gradient(90deg, #e0a82e, #f3cf6b); transform: scaleX(var(--sp, 0)); transform-origin: left; pointer-events: none; }
+.pc-header { transition: box-shadow 0.3s; }
+html[data-scrolled] .pc-header { box-shadow: 0 8px 26px rgba(8, 44, 24, 0.12); }
+
+/* hero: slow Ken Burns zoom, soft parallax, staggered entrance, floating action cards */
+@keyframes pc-kenburns { from { scale: 1.04; } to { scale: 1.14; } }
+.pc-hero-bg { animation: pc-kenburns 26s ease-in-out infinite alternate; translate: 0 calc(var(--sy, 0) * 0.14px); will-change: scale, translate; }
+.pc-hero-copy { translate: 0 calc(var(--sy, 0) * -0.06px); }
+.pc-hero-copy > * { animation: pc-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.pc-hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+.pc-hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+.pc-hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+.pc-floater { animation: pc-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.pc-floaters > :nth-child(1) { animation-delay: 0.35s; }
+.pc-floaters > :nth-child(2) { animation-delay: 0.45s; }
+.pc-floaters > :nth-child(3) { animation-delay: 0.55s; }
+.pc-floaters > :nth-child(4) { animation-delay: 0.65s; }
+
+/* page banner entrance */
+.pc-banner h1, .pc-banner .pc-crumbs { animation: pc-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.pc-banner h1 { animation-delay: 0.06s; }
+
+/* section headings get a small accent bar */
+.pc-section .pc-h2::after { content: ""; display: block; width: 44px; height: 4px; border-radius: 4px; margin-top: 10px; background: #e0a82e; transition: width 0.5s; }
+.pc-section .pc-h2:hover::after { width: 84px; }
+
+/* buttons: lift, press, light sweep */
+.pc-btn { position: relative; overflow: hidden; transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.2s, box-shadow 0.2s; }
+.pc-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(8, 44, 24, 0.22); }
+.pc-btn:active { transform: translateY(0) scale(0.98); box-shadow: none; }
+.pc-btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%); transform: translateX(-120%); transition: transform 0.7s; pointer-events: none; }
+.pc-btn:hover::after { transform: translateX(120%); }
+.pc-btn-primary { animation: pc-pulse-ring 2.6s 1.6s ease-out 2; }
+
+/* cards: lift + soft shadow, icon nudge, image zoom */
+.pc-tile, .pc-person, .pc-news, .pc-doclink, .pc-card { transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s, border-color 0.25s, background 0.25s; }
+.pc-tile:hover, .pc-person:hover, .pc-news:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(8, 44, 24, 0.13); border-color: var(--green-mid, #1f8a58); }
+.pc-doclink:hover { transform: translateX(4px); }
+.pc-icon { transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.2s, color 0.2s; }
+.pc-tile:hover .pc-icon { transform: scale(1.12) rotate(-5deg); background: var(--green); color: #fff; }
+.pc-news { overflow: hidden; }
+.pc-news img, .pc-person-photo img { transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.pc-news:hover img { transform: scale(1.06); }
+.pc-person:hover .pc-person-photo img { transform: scale(1.05); }
+.pc-person-photo { overflow: hidden; }
+
+/* links with arrows */
+.pc-link svg, .pc-tile svg:last-child { transition: transform 0.2s; }
+.pc-link:hover svg { transform: translateX(4px); }
+
+/* main navigation: underline grows from the centre */
+.pc-nav-link { position: relative; }
+.pc-nav-link::after { content: ""; position: absolute; left: 50%; bottom: 0; height: 3px; width: 0; background: #e0a82e; transform: translateX(-50%); transition: width 0.25s; }
+.pc-nav-link:hover::after { width: 60%; }
+
+/* figures */
+.pc-facts strong, .pc-stat strong { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-page, .pc-hero-bg, .pc-floater, .pc-hero-copy > *, .pc-banner h1, .pc-banner .pc-crumbs, .pc-btn-primary { animation: none !important; }
+  .js .pc-rv { opacity: 1; transform: none; }
+  body::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { .pc-hero-bg, .pc-hero-copy { translate: none; } }
