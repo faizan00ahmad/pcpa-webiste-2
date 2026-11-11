@@ -34,9 +34,9 @@ export default function Home() {
         <div className="pc-hero-bg">
           <PhotoCycle
             slides={[
+              { src: "/images/farm/tractor-wheat-field.jpg", pos: "50% 46%", shift: "16%" },
+              { src: "/images/farm/tractor-in-mustard-field.jpg", pos: "50% 46%", shift: "16%" },
               { src: "/images/farm/tractor-tilling-field.jpg", pos: "50% 25%" },
-              { src: "/images/slider/slide-07.jpg", pos: "50% 30%" },
-              { src: "/images/slider/slide-09.jpg", pos: "50% 35%" },
             ]}
           />
         </div>
